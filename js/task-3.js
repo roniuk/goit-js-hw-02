@@ -1,13 +1,14 @@
-console.log("\n"  + " " + "task--------------3\n");
-function checkForSpam(message) {
-    message = message.toLowerCase();
-    if (message.includes('spam')) {
+
+function checkForSpam(normalizedMessage) {
+    normalizedMessage = normalizedMessage.toLowerCase();
+
+    if (normalizedMessage.includes('spam') || normalizedMessage.includes('sale')) {
             return true;
-    }
-    if (message.includes('sale')) {
-        return true;
-    } else { return false; }
-    }
+} else {
+    return false;
+   }
+}
+    
 
 console.log(checkForSpam("Latest technology news")); // false
 console.log(checkForSpam("JavaScript weekly newsletter")); // false
